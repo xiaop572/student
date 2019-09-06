@@ -1,0 +1,115 @@
+body,
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    max-width: 750px;
+    font-size: 14px;
+    margin: auto;
+}
+
+li {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: #333
+}
+
+@media screen and (min-width:750px) {
+    html {
+        font-size: 100px !important
+    }
+}
+
+
+/* 头部 */
+
+header {
+    font-size: 17px;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff
+}
+
+.scroll {
+    overflow: scroll;
+    margin: 44px 0 0 0;
+    max-width: 750px;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* 今日活动 */
+
+.now_action {
+    width: 6.9rem;
+    height: 4rem;
+    background: #2074c7;
+    border-radius: .1rem;
+    margin: .18rem auto 0 auto
+}
+
+
+/* 运动记录 */
+
+.record {
+    width: 6.9rem;
+    height: 2.12rem;
+    background: #abcdef;
+    margin: .5rem auto 0 auto;
+}
+
+
+/* 人体状况 */
+
+.condition {
+    width: 6.9rem;
+    height: 2.17rem;
+    margin: .42rem auto 0 auto;
+    background: #fedcba;
+}
+
+
+/* 底部 */
+
+footer {
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+}
+
+footer ul {
+    height: 100%;
+    max-width: 750px;
+    margin: auto
+}
+
+footer ul li {
+    float: left;
+    width: 2.4rem;
+    text-align: center;
+    font-size: 12px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+footer ul li img {
+    display: block;
+    margin: 0 auto 5px auto;
+    height: 21px;
+    width: 21px;
+}

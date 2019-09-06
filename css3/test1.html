@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%
+        }
+        
+        body {
+            perspective: 1000;
+        }
+        
+        .cubeBox {
+            width: 300px;
+            height: 300px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform: rotateX(-30deg) rotateY(30deg);
+            transform: rotateX(-30deg) rotateY(50deg);
+            animation: boxRun 4s linear infinite alternate-reverse;
+            transform-origin: center center;
+        }
+        
+        .cubeBox div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .cubeBox .one {
+            background: red;
+            transform: translateZ(-150px)
+        }
+        
+        .cubeBox .two {
+            background: yellow;
+            transform: translateX(150px) rotateY(-90deg)
+        }
+        
+        .cubeBox .three {
+            background: green;
+            transform: translateX(-150px) rotateY(-90deg)
+        }
+        
+        .cubeBox .four {
+            background: #abcdef;
+            transform: translateY(150px) rotateX(90deg)
+        }
+        
+        .cubeBox .five {
+            background: #fedcba;
+            transform: translateY(-150px) rotateX(90deg)
+        }
+        
+        .cubeBox .six {
+            background: orangered;
+            transform: translateZ(150px)
+        }
+        
+        @keyframes boxRun {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg)
+            }
+            100% {
+                transform: rotateX(60deg) rotateY(180deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cubeBox">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+        <div class="six"></div>
+    </div>
+</body>
+
+</html>

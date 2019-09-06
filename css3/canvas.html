@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>canvas将图片转base64</title>
+</head>
+
+<body>
+    <p>canvas绘制的网络图片</p>
+    <canvas id="canvas"></canvas>
+    <p>img显示的base64格式图片</p>
+    <img src="" id="img">
+    <script>
+        // 参考链接 https://www.jianshu.com/p/6fe06667b748
+        // 网络图片地址必须服务器设置允许跨域
+        var image = "suo.jpg"
+            // 调用
+        convertImageToBase64(image)
+
+        function convertImageToBase64(image) {
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext('2d');
+            var imgObj = new Image();
+            // 先设置图片跨域属性
+            imgObj.setAttribute("crossOrigin", 'anonymous')
+                // 再给image赋值src属性，先后顺序不能颠倒
+            imgObj.src = image;
+            // 当图片加载完成后，绘制图片到canvas
+            imgObj.onload = function() {
+                // 设置canvas宽高等于图片实际宽高
+                canvas.width = this.width;
+                canvas.height = this.height;
+                ctx.drawImage(this, 0, 0);
+                // 将图片转成base64格式
+                var img = canvas.toDataURL("image/jpeg", 0.5); // toDataUrl可以接收2个参数，参数一：图片类型，参数二： 图片质量0-1（不传默认为0.92）
+                console.log(img)
+            }
+        }
+    </script>
+</body>
+
+</html>
