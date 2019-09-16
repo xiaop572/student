@@ -3,7 +3,7 @@ var fs = require('fs');
 var server = net.createServer();
 server.listen(12306, "127.0.0.1");
 server.on("listening", () => {
-    console.log("开启服务器了....")
+    console.log("开启服务器了")
 })
 server.on("connection", (scoket) => {
     scoket.on("data", (data) => {
